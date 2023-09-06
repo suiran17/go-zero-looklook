@@ -1,0 +1,26 @@
+# 测试 nginx
+# ---------------------------
+POST http://127.0.0.1:8888
+Content-Type: application/json
+
+{
+  "mobile": "18888888888",
+  "password": "123456"
+}
+
+###
+
+
+# looklook 服务测试
+# ---------------------------
+# curl  -X POST "http://127.0.0.1:8888/usercenter/v1/user/register" -H "Content-Type: application/json" -d "{\"mobile\":\"18888888888\",\"password\":\"123456\"}"
+POST http://localhost:8888/usercenter/v1/user/register
+#POST http://127.0.0.1:8888/usercenter/v1/user/register
+Content-Type: application/json
+
+{
+  "mobile": "18888888888",
+  "password": "123456"
+}
+
+###

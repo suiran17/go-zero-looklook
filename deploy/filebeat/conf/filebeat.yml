@@ -4,6 +4,16 @@ filebeat.inputs:
     paths:
       - /var/lib/docker/containers/*/*-json.log
 
+
+
+
+#  在 Filebeat 配置文件中，${path.config} 是一个占位符，它会被解析为 Filebeat 配置文件所在的目录路径。这个占位符通常用于指定 Filebeat 配置中的路径或文件。
+#
+#  在你的配置中，${path.config} 会被解析为 Filebeat 配置文件所在的目录，从而指向 modules.d 目录。这是因为在 filebeat.config.modules.path 配置中，${path.config} 会被替换为 Filebeat 配置文件的所在目录。因此，${path.config}/modules.d/*.yml 实际上是指向 Filebeat 的模块配置文件的目录。
+#
+#  举个例子，如果你的 Filebeat 配置文件位于 /etc/filebeat 目录下，那么 ${path.config} 就会被解析为 /etc/filebeat。因此，${path.config}/modules.d/*.yml 将会指向 /etc/filebeat/modules.d/*.yml 这个目录路径，这是 Filebeat 模块配置文件的存放位置。
+#
+#  综上所述，${path.config} 是一个动态的占位符，会根据 Filebeat 配置文件的实际路径进行解析。在配置文件中使用 ${path.config} 可以帮助你更灵活地指定文件路径。
 filebeat.config:
   modules:
     path: ${path.config}/modules.d/*.yml
