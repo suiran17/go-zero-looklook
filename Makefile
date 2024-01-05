@@ -5,3 +5,8 @@ up:
 down:
 	docker-compose  -f ./docker-compose-env.yml down
 	docker-compose  -f ./docker-compose.yml     down
+
+clean:
+	docker-compose  -f ./docker-compose-env.yml down	--remove-orphans
+	docker-compose  -f ./docker-compose.yml     down	--remove-orphans
+
