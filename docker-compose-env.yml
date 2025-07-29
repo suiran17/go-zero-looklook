@@ -108,7 +108,7 @@ services:
   #消费kafka中filebeat收集的数据输出到es - The data output collected by FileBeat in Kafka is output to ES
   go-stash:
     image: kevinwan/go-stash:1.0 # if you "macOs intel" or "linux amd"
-#    image: kevinwan/go-stash:1.0-arm64 #  if you "macOs m1" or "linux arm"
+#     image: kevinwan/go-stash:1.0-arm64 #  if you "macOs m1" or "linux arm"
     container_name: go-stash
     environment:
       # 时区上海 - Time zone Shanghai (Change if needed)
@@ -186,14 +186,14 @@ services:
 
   # kafka 可视化客户端
   # 配置访问的时候需要使用 kafka 的ip或者是 服务名称
-  kafka-ui-lite:
-    #    image: freakchicken/kafka-ui-lite
-    image: leixuewen/kafka-ui-lite
-    container_name: kafka-ui-lite-dev
-    ports:
-      - 18889:8889
-    networks:
-      - looklook_net
+#  kafka-ui-lite:
+#    #    image: freakchicken/kafka-ui-lite
+#    image: leixuewen/kafka-ui-lite
+#    container_name: kafka-ui-lite-dev
+#    ports:
+#      - 18889:8889
+#    networks:
+#      - looklook_net
 
 
   # ----------------------------------------------------------------------------
@@ -271,7 +271,7 @@ services:
 networks:
   looklook_net:
     driver: bridge
-    ipam:
-      config:
-        - subnet: 172.20.0.0/16
+    # ipam:
+    #   config:
+    #     - subnet: 172.20.0.0/16
 
